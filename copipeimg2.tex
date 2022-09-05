@@ -1,0 +1,43 @@
+\documentclass[a4j,12pt,dvipdfmx]{jsarticle}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	stringstyle={\ttfamily},
+	commentstyle={\ttfamily},
+	basicstyle={\ttfamily},
+	columns=fixed,
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+	backgroundcolor=\color{white},
+  numbers=left,%行数を表示したければonにする
+  xrightmargin=0em,
+  xleftmargin=3em,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1em,
+	tabsize=2,
+  lineskip=-0.5ex
+}
+
+\begin{document}
+\begin{lstlisting}
+import numpy as np
+a=1
+b=np.sqrt(0.5)
+t=0.25
+p=1
+for i in range(1,4):
+	a1=(a+b)/2
+	b1=np.sqrt(a*b)
+	t1=t-p*(a-a1)**2
+	p1=2*p
+	a=a1
+	b=b1
+	t=t1
+	p=p1
+mypi=((a+b)**2)/(4*t)
+print(mypi)
+\end{lstlisting}
+
+\end{document}
